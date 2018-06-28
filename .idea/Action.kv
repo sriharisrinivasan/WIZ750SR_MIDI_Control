@@ -1,0 +1,254 @@
+#:include main Controller
+<CustomPopup>:
+    size_hint: 1, 1
+    auto_dismiss: False
+    title: "The Popup"
+    btn: set_ip_address
+    btn: set_port
+    btn: close_midi_net
+    ip_address_text_input: ip_address
+    port_text_input: port
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            size_hint: 1, 0.5
+            orientation: "horizontal"
+            padding: 1
+            spacing: 1
+            TextInput:
+                id: ip_address
+                text: app.ip_add_val
+                color: 0,0,0,1
+            Button:
+                id: set_ip_address
+                text: "Set IP Address"
+                color: 0,0,0,1
+                background_normal: ''
+                background_color: 1, 0.5, .75, .85
+                on_press: root.btn_set_IP_Address_press()
+        BoxLayout:
+            size_hint: 1, 0.5
+            orientation: "horizontal"
+            padding: 1
+            spacing: 1
+            TextInput:
+                id: port
+                text: app.port_val
+                color: 0,0,0,1
+            Button:
+                id: set_port
+                text: "Set Port"
+                color: 0,0,0,1
+                background_normal: ''
+                background_color: 1, 0.5, .75, .85
+                on_press: root.btn_set_Port_press()
+        Button:
+            size_hint: 1, 0.9
+            id: close_midi_net
+            text: "Close"
+            color: 0,0,0,1
+            on_press: root.dismiss()
+
+
+<LoadDialog>:
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+        FileChooserListView:
+            id: filechooser
+            path: app.file_path
+
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: "Cancel"
+                color: 0,0,0,1
+                background_normal: ''
+                background_color: 1, 0.5, .75, .85
+                on_release: root.cancel()
+
+            Button:
+                text: "Load"
+                color: 0,0,0,1
+                background_normal: ''
+                background_color: 1, 0.5, .75, .85
+                on_release: root.load(filechooser.path, filechooser.selection)
+Controller:
+
+<Controller>:
+    lbl: my_label
+    btn: reset_interface
+    btn: midi_net
+    btn: play
+    btn: load_file
+    btn: play_file
+    btn: exit_test
+    BoxLayout:
+        pos_hint: {'x': 0, 'y': 0.15}
+        orientation: "vertical"
+        padding: 10
+        spacing: 10
+        BoxLayout:
+            orientation: 'horizontal'
+            Button:
+                size_hint_y: 0.4
+                id: load_file
+                text: 'Load File'
+                color: 0,0,0,1
+                background_normal: ''
+                background_color: 1, 0.5, .75, .85
+                on_release: root.show_load()
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: 0.4
+                Spinner:
+                    size_hint_y: 0.15
+                    width: 5
+                    text: "Chan-0 Instrument"
+                    color: 0,0,0,1
+                    background_normal: ''
+                    background_color: 1, 0.5, .75, .85
+                    values: app.chan0_inst_val
+                    id: spinner_inst_chan0
+                    on_text: root.spinner_sel_chan0_inst(spinner_inst_chan0.text)
+                Spinner:
+                    size_hint_y: 0.15
+                    width: 5
+                    text: "Chan-1 Instrument"
+                    color: 0,0,0,1
+                    background_normal: ''
+                    background_color: 1, 0.5, .75, .85
+                    values: app.chan1_inst_val
+                    id: spinner_inst_chan1
+                    on_text: root.spinner_sel_chan1_inst(spinner_inst_chan1.text)
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: 0.4
+                Button:
+                    size_hint_y: 0.15
+                    width: 5
+                    text: "Play Chan-0"
+                    color: 0,0,0,1
+                    background_normal: ''
+                    background_color: 1, 0.5, .75, .85
+                    id: play_chan0
+                    on_press: root.btn_play_chan0()
+                Button:
+                    size_hint_y: 0.15
+                    width: 5
+                    text: "Play Chan-1"
+                    color: 0,0,0,1
+                    background_normal: ''
+                    background_color: 1, 0.5, .75, .85
+                    values: app.instrument_val
+                    id: play_chan0
+                    on_press: root.btn_play_chan1()
+            Button:
+                size_hint_y: 0.4
+                id: play_file
+                text: 'Play Polyphony'
+                color: 0,0,0,1
+                background_normal: ''
+                background_color: 1, 0.5, .75, .85
+                on_press: root.play_file_press()
+                on_release: root.play_file_release()
+        Button:
+            pos_hint: {'x': 0, 'y': 0.5}
+            size_hint_y: 0.3
+            id: reset_interface
+            text: 'Reset IP Interface'
+            color: 0,0,0,1
+            background_normal: ''
+            background_color: 1, 0.5, .75, .85
+            on_press: root.btn_reset_interface_press()
+            on_release: root.btn_reset_interface_release()
+        Button:
+            pos_hint: {'x': 0, 'y': 0.7}
+            size_hint_y: 0.3
+            id: midi_net
+            text: 'MIDI Network Settings'
+            color: 0,0,0,1
+            background_normal: ''
+            background_color: 1, 0.5, .75, .85
+            on_press: root.btn_midi_net_press()
+            on_release: root.btn_midi_net_release()
+        BoxLayout:
+            orientation: "horizontal"
+            Spinner:
+                pos_hint: {'x': 0, 'y': 0.7}
+                size_hint_y: 0.3
+                width: 5
+                text: "Select Scale"
+                color: 0,0,0,1
+                background_normal: ''
+                background_color: 1, 0.5, .75, .85
+                values: app.scale_val
+                id: spinner_scale
+                on_text: root.spinner_sel_scale(spinner_scale.text)
+            Spinner:
+                pos_hint: {'x': 0, 'y': 0.7}
+                size_hint_y: 0.3
+                width: 5
+                text: "Select Pitch"
+                color: 0,0,0,1
+                background_normal: ''
+                background_color: 1, 0.5, .75, .85
+                values: app.pitch_val
+                id: spinner_pitch
+                on_text: root.spinner_sel_pitch(spinner_pitch.text)
+            Spinner:
+                pos_hint: {'x': 0, 'y': 0.7}
+                size_hint_y: 0.3
+                width: 5
+                text: "Select Instrument"
+                color: 0,0,0,1
+                background_normal: ''
+                background_color: 1, 0.5, .75, .85
+                values: app.instrument_val
+                id: spinner_instrument
+                on_text: root.spinner_sel_instrument(spinner_instrument.text)
+            Button:
+                pos_hint: {'x': 0, 'y': 0.7}
+                size_hint_y: 0.3
+                width: 5
+                id: play
+                text: "Play"
+                color: 0,0,0,1
+                background_normal: ''
+                background_color: 1, 0.5, .75, .85
+                on_press: root.btn_play_press()
+                on_release: root.btn_play_release()
+        BoxLayout:
+            pos_hint: {'x': 0, 'y': 0}
+            orientation: "vertical"
+            Label:
+                pos_hint: {'x': 0, 'y': 0.1}
+                size_hint_y: 0.75
+                size_hint_x: 1
+                id: my_label
+                text: '---------------'
+            BoxLayout:
+                pos_hint: {'x': 0, 'y': 0}
+                orientation: "horizontal"
+                Button:
+                    pos_hint: {'x': 0, 'y': 0}
+                    size_hint_y: 0.3
+                    size_hint_x: 0.25
+                    id: exit_test
+                    text: 'Voice Control'
+                    color: 0,0,0,1
+                    background_normal: ''
+                    background_color: 1, 0.5, .75, .85
+                    on_press: root.voice_control()
+                Button:
+                    pos_hint: {'x': 0.75, 'y': 0}
+                    size_hint_y: 0.3
+                    size_hint_x: 0.25
+                    id: exit_test
+                    text: 'Exit'
+                    color: 0,0,0,1
+                    background_normal: ''
+                    background_color: 1, 0.5, .75, .85
+                    on_press: root.exit_test()

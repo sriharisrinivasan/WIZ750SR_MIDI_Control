@@ -1,0 +1,292 @@
+##############################################################
+#              Minuet in G Minor - J S Bach                  #
+#              Transcribed here - Srihari Srinivasan         #
+##############################################################
+#              Disclaimer: I do not own the copyright        #
+#              for this song. This is just for               #
+#              demonstration of this tool                    #
+##############################################################
+# Set Tempo at 88 beats per second
+TMP(150)
+# Set Time Signature
+TS(3,4)
+# Polyphonic
+POLY(2)
+# Track - Piano - Treble Clef
+CLEF(TREBLE)
+{
+#Set Velocity
+VEL(100)
+# BAR 1
+SN(D5,4)
+SN(G4,8)
+SN(A4,8)
+SN(B4,8)
+SN(C5,8)
+# BAR 2
+SN(D5,4)
+SN(G4,4)
+SN(G4,4)
+# BAR 2
+SN(E5,4)
+SN(C5,8)
+SN(D5,8)
+SN(E5,8)
+SN(Fs5,8)
+# BAR 3
+SN(G5,4)
+SN(G4,4)
+SN(G4,4)
+# BAR 4
+SN(C5,4)
+SN(D5,8)
+SN(C5,8)
+SN(B4,8)
+SN(A4,8)
+# BAR 6
+SN(B4,4)
+SN(C5,8)
+SN(B4,8)
+SN(A4,8)
+SN(G4,8)
+# BAR 7
+SN(Fs4,4)
+SN(G4,8)
+SN(A4,8)
+SN(B4,8)
+SN(G4,8)
+# BAR 8
+SN(B4,32)
+SN(A4,1.3913)
+# BAR 9
+SN(D5,4)
+SN(G4,8)
+SN(A4,8)
+SN(B4,8)
+SN(C5,8)
+# BAR 10
+SN(D5,4)
+SN(G4,4)
+SN(G4,4)
+# BAR 11
+SN(E5,4)
+SN(C5,8)
+SN(D5,8)
+SN(E5,8)
+SN(Fs5,8)
+# BAR 12
+SN(G5,4)
+SN(G4,4)
+SN(G4,4)
+# BAR 13
+SN(C5,4)
+SN(D5,8)
+SN(C5,8)
+SN(B4,8)
+SN(A4,8)
+# BAR 14
+SN(B4,4)
+SN(C5,8)
+SN(B4,8)
+SN(A4,8)
+SN(G4,8)
+# BAR 15
+SN(A4,4)
+SN(B4,8)
+SN(A4,8)
+SN(G4,8)
+SN(Fs4,8)
+# BAR 16
+SN(G4,1.3333)
+# BAR 17
+SN(B5,4)
+SN(G5,8)
+SN(A5,8)
+SN(B5,8)
+SN(G5,8)
+# BAR 18
+SN(A5,4)
+SN(D5,8)
+SN(E5,8)
+SN(Fs5,8)
+SN(D5,8)
+# BAR 19
+SN(G5,4)
+SN(E5,8)
+SN(Fs5,8)
+SN(G5,8)
+SN(D5,8)
+# BAR 20
+SN(Cs5,4)
+SN(B4,8)
+SN(Cs5,8)
+SN(A4,4)
+# BAR 21
+SN(A4,8)
+SN(B4,8)
+SN(Cs5,8)
+SN(D5,8)
+SN(E5,8)
+SN(Fs5,8)
+# BAR 22
+SN(G5,4)
+SN(Fs5,4)
+SN(E5,4)
+# BAR 23
+SN(Fs5,4)
+SN(A4,4)
+SN(Cs5,4)
+# BAR 24
+SN(D5,1.3333)
+#BAR 25
+SN(D5,4)
+SN(G4,8)
+SN(Fs4,8)
+SN(G4,4)
+#BAR 26
+SN(E5,4)
+SN(G4,8)
+SN(Fs4,8)
+SN(G4,4)
+# BAR 27
+SN(D5,4)
+SN(C5,4)
+SN(B4,4)
+# BAR 28
+SN(A4,8)
+SN(G4,8)
+SN(Fs4,8)
+SN(G4,8)
+SN(A4,4)
+# BAR 29
+SN(D4,8)
+SN(E4,8)
+SN(Fs4,8)
+SN(G4,8)
+SN(A4,8)
+SN(B4,8)
+# BAR 30
+SN(C5,4)
+SN(B4,4)
+SN(A4,4)
+# BAR 31
+SN(B4,8)
+SN(D5,8)
+SN(G4,4)
+SN(Fs4,4)
+# BAR 32
+SMN(3,B3,D4,G4,1.3333) 
+}
+# Track - Piano - Bass Clef
+CLEF(BASS)
+{
+# BAR 1
+SMN(3,G3,B3,D4,2)
+SN(A3,4)
+# BAR 2
+SN(B3,1.3333)
+# BAR 3
+SN(C4,1.3333)
+# BAR 4
+SN(B3,1.3333)
+# BAR 5
+SN(A3,1.3333)
+# BAR 6
+SN(G3,1.3333)
+# BAR 7
+SN(D4,4)
+SN(B3,4)
+SN(G3,4)
+# BAR 8
+SN(D4,4)
+SN(D3,8)
+SN(C4,8)
+SN(B3,8)
+SN(A3,8)
+# BAR 9
+SN(B3,2)
+SN(A3,4)
+#BAR 10
+SN(G3,4)
+SN(B3,4)
+SN(G3,4)
+# BAR 11
+SN(C4,1.3333)
+# BAR 12
+SN(B3,4)
+SN(C4,8)
+SN(B3,8)
+SN(A3,8)
+SN(G3,8)
+# BAR 13
+SN(A3,2)
+SN(Fs3,4)
+# BAR 14
+SN(G3,2)
+SN(B3,4)
+# BAR 15
+SN(C4,4)
+SN(D4,4)
+SN(D3,4)
+# BAR 16
+SN(G3,2)
+SN(G2,4)
+# BAR 17
+SN(G3,1.3333)
+# BAR 18
+SN(Fs3,1.3333)
+# BAR 19
+SN(E3,4)
+SN(G3,4)
+SN(E3,4)
+# BAR 20
+SN(A3,2)
+SN(A2,4)
+# BAR 21
+SN(A3,1.3333)
+# BAR 22
+SN(B3,4)
+SN(D4,4)
+SN(Cs4,4)
+# BAR 23
+SN(D4,4)
+SN(Fs3,4)
+SN(A3,4)
+# BAR 24
+SN(D4,4)
+SN(D3,4)
+SN(C4,4)
+# BAR 25
+SN(B3,4)
+SN(D4,4)
+SN(B3,4)
+# BAR 26
+SN(C4,4)
+SN(E4,4)
+SN(C4,4)
+# BAR 27
+SN(B3,4)
+SN(A3,4)
+SN(G3,4)
+# BAR 28
+SN(D4,2)
+SR(4)
+# BAR 29
+SN(D3,2)
+SN(Fs3,4)
+# BAR 30
+SN(E3,4)
+SN(G3,4)
+SN(Fs3,4)
+# BAR 31
+SN(G3,4)
+SN(B2,4)
+SN(D3,4)
+# BAR 32
+SN(G3,4)
+SN(D3,4)
+SN(G2,4)
+}
+STOP
+
+
